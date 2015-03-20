@@ -10,22 +10,22 @@ This template allows you to write letters in Markdown and convert them to nice l
 All of which can be specified in a YAML metadata block. For example:
 
 	---
-	author: Aaron
+	author: You
 	opening: To whom it may concern,
 	closing: Sincerely,
 	address: 
-	 - 123 Street Rd
-	 - Chicago, IL
+	 - Address 1
+	 - Address 2
 	return-address: 
-	 - My Home
-	 - 456 Road St.
-	 - New York, NY
+	 - Address 1
+	 - Address 2
+	 - Address 3
 	...
 
-Note that each address component should start with a hypen. The provided example letter can be compiled with the following command:
+Note that each address component should start with a hypen. The provided example letter can be compiled with the following command (xelatex option included for different fonts/sizes):
 
 ```
-pandoc --template=template-letter.tex example/letter.md -o letter.pdf
+pandoc --template=template-letter.tex letter.md -o letter.pdf --latex-engine=xelatex
 ```
 
 ## Extra features
